@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Booking</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <nav>
+
+        <h2 class="logo">ServiceHub</h2>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+
+        <div class="user-box">
+
+            <span class="username">
+                <i class="fa-solid fa-user"></i>
+                <span id="displayUser">Guest</span>
+            </span>
+
+            <button class="logout" onclick="logoutUser()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </button>
+
+        </div>
+
+    </nav>
+
+    <div class="container">
+
+        <div class="left-panel">
+
+            <div class="card">
+
+                <h3>Added Items</h3>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Service Name</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="cartBody"></tbody>
+
+                </table>
+
+                <div class="total">
+                    <span>Total Amount</span>
+                    <span>₹ <span id="total">0</span></span>
+                </div>
+
+            </div>
+
+            <div class="card form-card">
+
+                <h3>Book Now</h3>
+
+                <label>Full Name</label>
+                <input type="text" id="fullName">
+
+                <label>Email ID</label>
+                <input type="email" id="email">
+
+                <label>Phone Number</label>
+                <input type="text" id="phone">
+
+                <button class="book-btn" onclick="bookNow()">
+                    Book Now
+                </button>
+
+                <div id="bookingMessage"></div>
+
+            </div>
+
+        </div>
+
+        <div class="right-panel">
+
+            <div class="service-card">
+
+                <h2>Browse Our Services</h2>
+
+                <p>
+                    Click on Add Item to add services to cart
+                    or Skip Item to view next service.
+                </p>
+
+                <hr>
+
+                <img id="serviceImg" src="">
+
+                <div class="service-info">
+
+                    <h3 id="serviceName"></h3>
+
+                    <h2 id="servicePrice"></h2>
+
+                </div>
+
+                <div class="buttons">
+
+                    <button class="skip" onclick="skipService()">
+                        Skip Item
+                    </button>
+
+                    <button class="add" onclick="addService()">
+                        Add Item
+                    </button>
+
+                </div>
+
+                <p class="note">
+                    Add items to cart and click Book Now.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
